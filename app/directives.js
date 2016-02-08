@@ -9,7 +9,7 @@ app.directive('passwordMatch', [function () {
         restrict: 'A',
         scope:true,
         require: 'ngModel',
-        link: function (scope, elem , attrs,control) {
+        link: function (scope, elem, attrs, control) {
             var checker = function () {
  
                 //get the value of the first password

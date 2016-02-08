@@ -1,4 +1,10 @@
 <?php 
+$app->get('/portfolio', function() {
+    $db = new DbHandler();
+    $portfolio = $db->getAllRecords("select uid,title,excerpt,content,created from portfolio");
+    echoResponse(200, $portfolio);
+});
+
 $app->get('/session', function() {
     $db = new DbHandler();
     $session = $db->getSession();

@@ -17,21 +17,33 @@ a {
 a:hover {
 	cursor: pointer;
 }
+input, textarea, button {
+	border-radius: 1px !important;
+} 
+figure img {
+	width: 100%;
+	height: auto;
+}
 /* Navbar */
 .navbar {
 	margin-bottom: 0px;
-	background: #F1F1F1;
+	background: none;
 }
 .navbar .navbar-brand {
 	font-weight: 700;
 	height: auto;
 	font-size: 24px;
 	line-height: 24px;
-	padding: 24px;
+	padding: 9px;
+}
+.navbar .navbar-brand figure {
+	width: 60px;
 }
 .navbar .navbar-right a {
 	padding: 27px 24px;
-	font-weight: 500;
+	font-weight: 700;
+	font-size: 18px;
+	color: #FFF;
 }
 .navbar .navbar-toggle {
 	margin-top: 18px;
@@ -67,17 +79,39 @@ a:hover {
 	top: -6px;
 	transform: rotate(-45deg);
 }
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+/* Home page */
+.home-banner {
+	background: url(../img/home-banner.jpeg) no-repeat center top;
+	padding: 180px 0 150px;
+}
+.home-banner h1, .home-banner h4, .home-banner p {
+	color: #FFF;
+}
+.home-banner h1 {
+	font-size: 9em;
+	font-weight: 500;
+}
+.home-banner h4 {
+	font-weight: 300;
+	font-size: 2.4em;
+}
+.home-banner p {
+	font-weight: 300;
+	font-size: 1.2em;
+}
 /* Angular animation CSS */
 .slide {
 	position: absolute;
-	left: 0;
-	top: 60px;
+	left: 0px;
+	top: 0px;
 	width: 100%;
-	height: 100%;
 }
 .slide.ng-enter, .slide.ng-leave {
-	-webkit-transition: all 300ms ease-out;
-	transition: all 1s ease;
+	-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 .slide.ng-enter {
 	left: 100%;

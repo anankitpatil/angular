@@ -18,30 +18,28 @@
 <body ng-cloak="">
 <nav class="navbar navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar top-bar"></span>
-        <span class="icon-bar middle-bar"></span>
-        <span class="icon-bar bottom-bar"></span>
-      </button>
-      <a class="navbar-brand" href="./#">Angular</a>
+    <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button>
+        <a class="navbar-brand" href="./#/"><figure><img src="img/logo-w.png" /></figure></a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="collapse-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show="name" ng-if="name" class="dropdown"> <a href="./#/dashboard" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{name}}</a></li>
+          <!--<li><a href="./#/dashboard">Dashboard </a></li>-->
+          <li><a href="./#/about">About</a></li>
+          <li><a href="./#/work">Work</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="collapse-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="./#/about">About</a></li>
-        <li><a href="./#/work">Work</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.container-fluid --> 
 </nav>
-<div style="margin-top:74px">
-  <div data-ng-view="" id="ng-view" class="slide container-fluid"></div>
-</div>
+<div data-ng-view="" id="ng-view" class="slide"></div>
 </body>
-<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+<toaster-container toaster-options="{'time-out': 1000}"></toaster-container>
 <!-- Libs -->
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -53,5 +51,4 @@
 <script src="app/data.js"></script>
 <script src="app/directives.js"></script>
 <script src="app/authCtrl.js"></script>
-<script src="app/frontCtrl.js"></script>
 </html>

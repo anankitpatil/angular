@@ -17,7 +17,14 @@ class DbHandler {
         $r = $this->conn->query($query.' LIMIT 1') or die($this->conn->error.__LINE__);
         return $result = $r->fetch_assoc();    
     }
-    /**
+	/**
+	 * Fetching all records
+	 */
+    public function getAllRecords($query) {
+        $r = $this->conn->query($query) or die($this->conn->error.__LINE__);
+        return $result = $r->fetch_assoc();    
+    }
+	/**
      * Creating new record
      */
     public function insertIntoTable($obj, $column_names, $table_name) {
@@ -41,52 +48,53 @@ class DbHandler {
         if ($r) {
             $new_row_id = $this->conn->insert_id;
             return $new_row_id;
-            } else {
+        } else {
             return NULL;
         }
     }
-public function getSession(){
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    $sess = array();
-    if(isset($_SESSION['uid']))
-    {
-        $sess["uid"] = $_SESSION['uid'];
-        $sess["name"] = $_SESSION['name'];
-        $sess["email"] = $_SESSION['email'];
-    }
-    else
-    {
-        $sess["uid"] = '';
-        $sess["name"] = 'Guest';
-        $sess["email"] = '';
-    }
-    return $sess;
-}
-public function destroySession(){
-    if (!isset($_SESSION)) {
-    session_start();
-    }
-    if(isSet($_SESSION['uid']))
-    {
-        unset($_SESSION['uid']);
-        unset($_SESSION['name']);
-        unset($_SESSION['email']);
-        $info='info';
-        if(isSet($_COOKIE[$info]))
-        {
-            setcookie ($info, '', time() - $cookie_time);
-        }
-        $msg="Logged Out Successfully...";
-    }
-    else
-    {
-        $msg = "Not logged in...";
-    }
-    return $msg;
-}
+	
+	public function getSession(){
+		if (!isset($_SESSION)) {
+			session_start();
+		}
+		$sess = array();
+		if(isset($_SESSION['uid']))
+		{
+			$sess["uid"] = $_SESSION['uid'];
+			$sess["name"] = $_SESSION['name'];
+			$sess["email"] = $_SESSION['email'];
+		}
+		else
+		{
+			$sess["uid"] = '';
+			$sess["name"] = 'Guest';
+			$sess["email"] = '';
+		}
+		return $sess;
+	}
+	
+	public function destroySession(){
+		if (!isset($_SESSION)) {
+		session_start();
+		}
+		if(isSet($_SESSION['uid']))
+		{
+			unset($_SESSION['uid']);
+			unset($_SESSION['name']);
+			unset($_SESSION['email']);
+			$info='info';
+			if(isSet($_COOKIE[$info]))
+			{
+				setcookie ($info, '', time() - $cookie_time);
+			}
+			$msg="Logged Out Successfully...";
+		}
+		else
+		{
+			$msg = "Not logged in...";
+		}
+		return $msg;
+	}
  
 }
-
 ?>

@@ -11,7 +11,7 @@ app.config(['$routeProvider',
 		.when('/logout', {
 			title: 'Logout',
 			templateUrl: 'partials/login.html',
-			controller: 'logoutCtrl'
+			controller: 'authCtrl'
 		})
 		.when('/signup', {
 			title: 'Signup',
@@ -26,19 +26,19 @@ app.config(['$routeProvider',
 		.when('/', {
 			title: 'Home',
 			templateUrl: 'pages/home.html',
-			controller: 'frontCtrl',
+			controller: 'authCtrl',
 			role: '0'
 		})
 		.when('/about', {
 			title: 'About',
 			templateUrl: 'pages/about.html',
-			controller: 'frontCtrl',
+			controller: 'authCtrl',
 			role: '0'
 		})
 		.when('/work', {
 			title: 'Work',
 			templateUrl: 'pages/work.html',
-			controller: 'frontCtrl',
+			controller: 'authCtrl',
 			role: '0'
 		})
 		.otherwise({
@@ -46,8 +46,7 @@ app.config(['$routeProvider',
 		});
 		
 		// $locationProvider.html5Mode(true);
-  }])
-    .run(function ($rootScope, $location, Data) {
+  }]).run(function ($rootScope, $location, Data) {
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
             $rootScope.authenticated = false;
             Data.get('session').then(function (results) {
@@ -58,11 +57,14 @@ app.config(['$routeProvider',
                     $rootScope.email = results.email;
                 } else {
                     var nextUrl = next.$$route.originalPath;
-                    /*if (nextUrl == '/signup' || nextUrl == '/login') {
-
-                    } else {
-                        $location.path("/");
-                    }*/
+					console.log(next.$$route.originalPath);
+                    if (nextUrl == '/signup' || nextUrl == '/login' || nextUrl == '/' || nextUrl == '/about' || nextUrl == '/work') {
+						$location.path(nextUrl);
+                    } else if (nextUrl == '/dashboard') {
+						$location.path("/login");
+					} else {
+                        
+                    }
                 }
             });
         });
