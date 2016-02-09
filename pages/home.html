@@ -1,20 +1,62 @@
-<div class="container-fluid home-banner">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row home-banner">
     <div class="col-lg-12 text-center">
-      <h1>Portfolio<br />Dashboard</h1>
-      <h4>Angular SQL jQuery</h4>
-      <p>Version 0.1</p>
+      <h1 class="wow fadeIn" data-wow-delay=".3s">Portfolio<br />
+        Dashboard</h1>
+      <h4 class="wow fadeIn" data-wow-delay=".6s">Angular SQL jQuery</h4>
+      <p class="wow fadeIn" data-wow-delay=".9s">Version 0.1</p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-12 text-center"> <a href="./#/">Home</a> <a href="./#/about">About</a> <a href="./#/work">Work</a> </div>
-  </div>
 </div>
-<div class="container-fluid home-content">
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <h1>Home page</h1>
-      <h4>Angular trials</h4>
+<div class="container">
+  <div class="row home-content">
+    <div class="col-sm-4">
+      <h1>Setup</h1>
+      <p>Instructions to setup and install the package.</p>
+    </div>
+    <div class="col-sm-8">
+      <h3>Download</h3>
+      <p>Download the source code from <a href="https://github.com/anankitpatil/archive/master.zip">Github</a>.</p>
+      <hr>
+      <h3>Enter database configuration</h3>
+      <p>The config file is located at <code>/api/config.php</code>. Put in the database host, username, password and database name in this file.</p>
+      <hr>
+      <h3>Create tables in your database</h3>
+      <p>Create the <strong>User</strong> table with the following SQL code.</p>
+      <pre><code class="language-sql">CREATE TABLE `users` (
+  `uid` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;</code></pre>
+	  <p>Create a <strong>Portfolio</strong> table with the following SQL code.</p>
+      <pre><code class="language-sql">CREATE TABLE `portfolio` (
+  `uid` int(11) NOT NULL,
+  `title` varchar(1000) NOT NULL,
+  `excerpt` varchar(12000) NOT NULL,
+  `content` longtext NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;</code></pre>
+    </div>
+  </div>
+  <div class="row home-content">
+    <div class="col-sm-4">
+      <h1>Usage</h1>
+      <p>Its simple, just sign up, and your ready to go.</p>
+    </div>
+    <div class="col-sm-8">
+      <h3>Dashboard access</h3>
+      <p>The dashboard can be accessed at <code>/dashboard</code>. If your a new user you can <strong>sign up</strong> or enter your credentials.</p>
+      <hr>
+      <h3>Enter database configuration</h3>
+      <p>The config file is located at <code>/api/config.php</code>. Put in the database host, username, password and database name in this file.</p>
+      <hr>
+      <h3>Create tables in your database</h3>
+      <p>Create the <strong>User</strong> databses with the following SQL code.</p>
     </div>
   </div>
   <div class="row">

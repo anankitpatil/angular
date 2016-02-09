@@ -24,26 +24,58 @@ figure img {
 	width: 100%;
 	height: auto;
 }
+pre {
+	border-radius: 1px;
+}
+code {
+	white-space: pre;
+	word-break: normal;
+	word-wrap: normal;
+}
+.btn-primary {
+	background: #2581B5;
+	border: none;
+}
+.scrollup {
+	position: fixed;
+	bottom: 48px;
+	right: 48px;
+	font-size: 36px;
+	color: #CCC;
+	cursor: pointer;
+}
 /* Navbar */
 .navbar {
 	margin-bottom: 0px;
 	background: none;
+	transition: all 600ms ease-in-out;
+}
+.navbar.overlay {
+	background: #EBEBEB;
 }
 .navbar .navbar-brand {
-	font-weight: 700;
-	height: auto;
-	font-size: 24px;
-	line-height: 24px;
-	padding: 9px;
+	height: 66px;
+	width: 66px;
+	margin: 9px;
+	background: url(../img/logo-w.png) no-repeat center center;
+	background-size: contain;
 }
-.navbar .navbar-brand figure {
-	width: 60px;
+.navbar.overlay .navbar-brand {
+	background: url(../img/logo.png) no-repeat center center;
+	background-size: contain;
 }
 .navbar .navbar-right a {
-	padding: 27px 24px;
+	padding: 30px 24px;
 	font-weight: 700;
 	font-size: 18px;
 	color: #FFF;
+}
+.navbar .navbar-right a:hover, .navbar.overlay .navbar-right a:hover {
+	color: #2581B5;
+	background: none;
+}
+.navbar.overlay .navbar-right a {
+	color: #000;
 }
 .navbar .navbar-toggle {
 	margin-top: 18px;
@@ -91,16 +123,78 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	color: #FFF;
 }
 .home-banner h1 {
-	font-size: 9em;
+	font-size: 7.5em;
 	font-weight: 500;
 }
 .home-banner h4 {
 	font-weight: 300;
-	font-size: 2.4em;
+	font-size: 2.1em;
 }
 .home-banner p {
 	font-weight: 300;
 	font-size: 1.2em;
+}
+.home-content {
+	padding-top: 96px;
+	/*padding-bottom: 96px;*/
+}
+.home-content h1 {
+	font-weight: 700;
+	font-size: 48px;
+}
+.home-content p {
+	font-weight: 300;
+	font-size: 18px;
+}
+.home-content a {
+	text-decoration: none;
+	color: #3EA7E3;
+}
+.home-content a:hover {
+	text-decoration: none;
+	color: #2581B5;
+}
+/* Login Page */
+.login-box .panel {
+	background: rgba(255,255,255,0.9);
+	border-radius: 1px;
+}
+.login-box .panel .panel-heading {
+	background: #EBEBEB;
+	border-bottom: 1px solid #CCC;
+}
+.login-box .panel .panel-heading h3 {
+	font-size: 24px;
+	line-height: 36px;
+}
+.login-box label {
+	font-weight: 300;
+	font-size: 18px;
+}
+.login-box input {
+	font-size: 18px;
+	height: 42px;
+}
+.login-box button {
+	font-size: 18px;
+	height: 42px;
+	padding: 0 42px;
+	margin-top: 15px;
+}
+.login-box a {
+	color: #3EA7E3;
+	font-size: 18px;
+	line-height: 42px;
+	margin-top: 15px;
+	text-decoration: none;
+}
+.login-box a:hover {
+	color: #2581B5;
+}
+.login-box p {
+	line-height: 60px;
+	font-size: 15px;
+	text-align: center;
 }
 /* Angular animation CSS */
 .slide {

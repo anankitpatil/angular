@@ -9,6 +9,7 @@
 <link href="css/animate.min.css" rel="stylesheet">
 <link href="css/custom.css" rel="stylesheet">
 <link href="css/toaster.css" rel="stylesheet">
+<link href="css/prism.css" rel="stylesheet">
 <!--[if lt IE 9]><link href= "css/bootstrap-theme.css"rel= "stylesheet" >
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -16,17 +17,17 @@
 </head>
 
 <body ng-cloak="">
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-fixed-top wow fadeInDown">
   <div class="container">
     <div class="row">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button>
-        <a class="navbar-brand" href="./#/"><figure><img src="img/logo-w.png" /></figure></a> </div>
+        <a class="navbar-brand" href="./#/"></a> </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="collapse-navbar">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-show="name" ng-if="name" class="dropdown"> <a href="./#/dashboard" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{name}}</a></li>
+          <li ng-show="name" ng-if="name"> <a href="./#/dashboard">{{name}}</a></li>
           <!--<li><a href="./#/dashboard">Dashboard </a></li>-->
           <li><a href="./#/about">About</a></li>
           <li><a href="./#/work">Work</a></li>
@@ -51,4 +52,7 @@
 <script src="app/data.js"></script>
 <script src="app/directives.js"></script>
 <script src="app/authCtrl.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/prism.js"></script>
+<script src="app/jq.js"></script>
 </html>

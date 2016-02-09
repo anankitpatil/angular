@@ -57,7 +57,6 @@ app.config(['$routeProvider',
                     $rootScope.email = results.email;
                 } else {
                     var nextUrl = next.$$route.originalPath;
-					console.log(next.$$route.originalPath);
                     if (nextUrl == '/signup' || nextUrl == '/login' || nextUrl == '/' || nextUrl == '/about' || nextUrl == '/work') {
 						$location.path(nextUrl);
                     } else if (nextUrl == '/dashboard') {
@@ -67,5 +66,15 @@ app.config(['$routeProvider',
                     }
                 }
             });
+			Data.get('portfolio').then(function (results) {
+				console.log(results);
+                if (results.uid) {
+					console.log(results);
+                    //$rootScope.uid = results.uid;
+                    //$rootScope.name = results.name;
+                    //$rootScope.email = results.email;
+                }
+            });
+			
         });
     });

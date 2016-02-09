@@ -22,7 +22,13 @@ class DbHandler {
 	 */
     public function getAllRecords($query) {
         $r = $this->conn->query($query) or die($this->conn->error.__LINE__);
-        return $result = $r->fetch_assoc();    
+		$x = 0;
+		while ($row = $r->fetch_assoc())  {
+			$result[$x] = $row;
+			$x++;
+		}
+		return $result;
+		//return $result = $r->fetch_assoc();    
     }
 	/**
      * Creating new record
