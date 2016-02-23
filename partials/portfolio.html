@@ -1,16 +1,16 @@
 <div class="container dashboard">
   <div class="row">
     <div class="col-lg-12 navigation">
-      <a href="#/dashboard/user/">{{ email }}</a>
-      <a href="#/dashboard/portfolio/">Portfolio</a>
+      <a href="dashboard/user/">{{ email }}</a>
+      <a href="dashboard/portfolio/">Portfolio</a>
       <a ng-click="logout();">Logout</a>
     </div>
   </div>
 </div>
-<div class="container dashboard">
+<div class="container portfolio">
   <div class="row">
     <div class="col-md-4 list">
-      <a ng-repeat="row in portfolio" href="#/edit/{{ row.title }}" class="list-group-item">{{ row.title }}</a>
+      <a ng-repeat="row in portfolio" href="dashboard/portfolio/{{ row.title }}" class="list-group-item">{{ row.title }}</a>
     </div>
     <div class="col-md-8 edit">
       

@@ -1,7 +1,7 @@
 var app = angular.module('authApp', ['ngRoute', 'ngAnimate', 'toaster']);
 
-app.config(['$routeProvider',
-  function ($routeProvider) {
+app.config(['$routeProvider', '$locationProvider',
+  function ($routeProvider, $locationProvider) {
         $routeProvider.
         when('/login', {
             title: 'Login',
@@ -21,7 +21,25 @@ app.config(['$routeProvider',
 		.when('/dashboard', {
 			title: 'Dashboard',
 			templateUrl: 'partials/dashboard.html',
+			controller: 'authCtrl',
+			activetab: 'dashboard'
+		})
+		.when('/dashboard/user', {
+			title: 'User',
+			templateUrl: 'partials/user.html',
+			controller: 'authCtrl',
+			activetab: 'user'
+		})
+		.when('/dashboard/user/:uid', {
+			title: 'User Profile',
+			templateUrl: 'partials/user.html',
 			controller: 'authCtrl'
+		})
+		.when('/dashboard/portfolio', {
+			title: 'Portfolio',
+			templateUrl: 'partials/portfolio.html',
+			controller: 'authCtrl',
+			activetab: 'portfolio'
 		})
 		.when('/', {
 			title: 'Home',
@@ -33,48 +51,19 @@ app.config(['$routeProvider',
 			title: 'About',
 			templateUrl: 'pages/about.html',
 			controller: 'authCtrl',
+			activetab: 'about',
 			role: '0'
 		})
 		.when('/work', {
 			title: 'Work',
 			templateUrl: 'pages/work.html',
 			controller: 'authCtrl',
+			activetab: 'work',
 			role: '0'
 		})
 		.otherwise({
 			redirectTo: '/'
 		});
 		
-		// $locationProvider.html5Mode(true);
-  }]).run(function ($rootScope, $location, Data) {
-        $rootScope.$on("$routeChangeStart", function (event, next, current) {
-            $rootScope.authenticated = false;
-            Data.get('session').then(function (results) {
-                if (results.uid) {
-                    $rootScope.authenticated = true;
-                    $rootScope.uid = results.uid;
-                    $rootScope.name = results.name;
-                    $rootScope.email = results.email;
-                } else {
-                    var nextUrl = next.$$route.originalPath;
-                    if (nextUrl == '/signup' || nextUrl == '/login' || nextUrl == '/' || nextUrl == '/about' || nextUrl == '/work') {
-						$location.path(nextUrl);
-                    } else if (nextUrl == '/dashboard') {
-						$location.path("/login");
-					} else {
-                        
-                    }
-                }
-            });
-			Data.get('portfolio').then(function (results) {
-				console.log(results);
-                if (results.uid) {
-					console.log(results);
-                    //$rootScope.uid = results.uid;
-                    //$rootScope.name = results.name;
-                    //$rootScope.email = results.email;
-                }
-            });
-			
-        });
-    });
+		$locationProvider.html5Mode(true);
+  }]);

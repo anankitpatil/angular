@@ -1,8 +1,14 @@
 <?php 
 $app->get('/portfolio', function() {
     $db = new DbHandler();
-    $portfolio = $db->getAllRecords("select uid,title,excerpt,content,created from portfolio");
+    $portfolio = $db->getAllRecords("select uid,title,excerpt,content,author,created from portfolio");
     echoResponse(200, $portfolio);
+});
+
+$app->get('/users', function() {
+    $db = new DbHandler();
+    $users = $db->getAllRecords("select uid,role,name,email,created from users");
+    echoResponse(200, $users);
 });
 
 $app->get('/session', function() {
@@ -22,7 +28,7 @@ $app->post('/login', function() use ($app) {
     $db = new DbHandler();
     $password = $r->user->password;
     $email = $r->user->email;
-    $user = $db->getOneRecord("select uid,name,password,email,created from users where phone='$email' or email='$email'");
+    $user = $db->getOneRecord("select uid,role,name,password,email,created from users where phone='$email' or email='$email'");
     if ($user != NULL) {
         if(passwordHash::check_password($user['password'],$password)){
         $response['status'] = "success";

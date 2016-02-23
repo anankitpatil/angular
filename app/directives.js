@@ -7,7 +7,7 @@ app.directive('focus', function() {
 app.directive('passwordMatch', [function () {
     return {
         restrict: 'A',
-        scope:true,
+        scope: true,
         require: 'ngModel',
         link: function (scope, elem, attrs, control) {
             var checker = function () {

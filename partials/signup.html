@@ -1,52 +1,54 @@
-<div class="row home-banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8 login-box">
-        <div class="panel">
-          <div class="panel-heading">
-            <h3 class="panel-title">Sign up</h3>
-          </div>
-          <div class="panel-body">
-            <form name="signupForm" class="col-lg-12" role="form">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" placeholder="Email" name="email" ng-model="signup.email" focus/>
-                    <span ng-show="signupForm.email.$error.email" class="help-inline">Email is not valid</span> </span> </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name = "password" placeholder="Password" ng-model="signup.password" required/>
-                    <small class="errorMessage" data-ng-show="signupForm.password.$dirty && signupForm.password.$invalid"> Enter Password.</small> </span> </div>
-                  <div class="form-group">
-                    <label for="password2">Confirm Password</label>
-                    <input type="password" class="form-control" name="password2" placeholder="Password Again" ng-model="signup.password2" password-match="signup.password" required/>
-                    <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.required"> Enter password again.</small> <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordNoMatch && !signupForm.password2.$error.required"> Password do not match.</small> </span> </div>
+<div class="container-fluid">
+  <div class="row home-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 login-box">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Sign up</h3>
+            </div>
+            <div class="panel-body">
+              <form name="signupForm" class="col-lg-12" role="form">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" placeholder="Email" name="email" ng-model="signup.email" focus/>
+                      <span ng-show="signupForm.email.$error.email" class="help-inline">Email is not valid</span> </span> </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name = "password" placeholder="Password" ng-model="signup.password" required/>
+                      <small class="errorMessage" data-ng-show="signupForm.password.$dirty && signupForm.password.$invalid"> Enter Password.</small> </span> </div>
+                    <div class="form-group">
+                      <label for="password2">Confirm Password</label>
+                      <input type="password" class="form-control" name="password2" placeholder="Password Again" ng-model="signup.password2" password-match="signup.password" required/>
+                      <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.required"> Enter password again.</small> <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordNoMatch && !signupForm.password2.$error.required"> Password do not match.</small> </span> </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" placeholder="Name" ng-model="signup.name" />
+                      </span> </div>
+                    <div class="form-group">
+                      <label for="phone">Phone</label>
+                      <input type="text" class="form-control" placeholder="Phone" name="phone" ng-model="signup.phone"/>
+                      </span> </div>
+                    <div class="form-group">
+                      <label for="address">Address</label>
+                      <input type="text" class="form-control" placeholder="Address" ng-model="signup.address" />
+                      </span> </div>
+                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" placeholder="Name" ng-model="signup.name" />
-                    </span> </div>
-                  <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" placeholder="Phone" name="phone" ng-model="signup.phone"/>
-                    </span> </div>
-                  <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" placeholder="Address" ng-model="signup.address" />
-                    </span> </div>
-                </div>
-              </div>
-              <a href="./#/login" class="pull-left">Registered? Sign in</a>
-              <button type="submit" class="pull-right btn btn-primary" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid"> Sign Up </button>
-            </form>
+                <a href="#/login" class="pull-left">Registered? Sign in</a>
+                <button type="submit" class="pull-right btn btn-primary" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid"> Sign Up </button>
+              </form>
+            </div>
           </div>
+          <p>Angular SQL Dashboard v0.1</p>
         </div>
-        <p>Angular SQL Dashboard v0.1</p>
+        <div class="col-md-2"></div>
       </div>
-      <div class="col-md-2"></div>
     </div>
   </div>
 </div>

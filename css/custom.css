@@ -1,8 +1,8 @@
 /* Angular SQL Application
 Version 0.1
 Ankit Patil */
-body {
-	padding-top: 51px;
+html, body {
+	
 }
 /* Global CSS */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng.ng-cloak {
@@ -38,11 +38,14 @@ code {
 }
 .scrollup {
 	position: fixed;
-	bottom: 48px;
+	top: calc(100% - 84px);
 	right: 48px;
 	font-size: 36px;
 	color: #CCC;
 	cursor: pointer;
+}
+.scrollup:hover {
+	color: #ACACAC;
 }
 /* Navbar */
 .navbar {
@@ -78,8 +81,8 @@ code {
 	color: #000;
 }
 .navbar .navbar-toggle {
-	margin-top: 18px;
-	margin-bottom: 18px;
+	margin-top: 24px;
+	margin-bottom: 24px;
 }
 .navbar .navbar-toggle .icon-bar {
 	background: #888;
@@ -123,16 +126,16 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	color: #FFF;
 }
 .home-banner h1 {
-	font-size: 7.5em;
+	font-size: 7.5vw;
 	font-weight: 500;
 }
 .home-banner h4 {
 	font-weight: 300;
-	font-size: 2.1em;
+	font-size: 2.1vw;
 }
 .home-banner p {
 	font-weight: 300;
-	font-size: 1.2em;
+	font-size: 1.2vw;
 }
 .home-content {
 	padding-top: 96px;
@@ -195,6 +198,19 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	line-height: 60px;
 	font-size: 15px;
 	text-align: center;
+}
+/*  Dashboard */
+.dashboard {
+	padding-top: 96px;
+}
+.dashboard .navigation a {
+	text-decoration: none;
+	background: #EBEBEB;
+	padding: 135px 24px 18px;
+	font-size: 18px;
+}
+.user, .portfolio {
+	margin-top: 96px;
 }
 /* Angular animation CSS */
 .slide {
